@@ -3,12 +3,11 @@ package lessons.o01_Iterations;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class SolutionTest {
 
-    Solution solution;
+    private Solution solution;
 
     @Before
     public void init() {
@@ -16,81 +15,81 @@ public class SolutionTest {
     }
 
     @Test
-    public void solution9() {
+    public void testSolution9() {
         // 1001
-        assertThat(solution.solution(9), equalTo(2));
+        assertThat(solution.solution(9)).isEqualTo(2);
     }
 
     @Test
-    public void solution529() {
+    public void testSolution529() {
         // 1000010001
-        assertThat(solution.solution(529), equalTo(4));
+        assertThat(solution.solution(529)).isEqualTo(4);
     }
 
     @Test
-    public void solution20() {
+    public void testSolution20() {
         // 10100
-        assertThat(solution.solution(20), equalTo(1));
+        assertThat(solution.solution(20)).isEqualTo(1);
     }
 
     @Test
-    public void solution32() {
+    public void testSolution32() {
         // 100000
-        assertThat(solution.solution(32), equalTo(0));
+        assertThat(solution.solution(32)).isEqualTo(0);
     }
 
     @Test
-    public void solution1041() {
+    public void testSolution1041() {
         // 10000010001
-        assertThat(solution.solution(1041), equalTo(5));
+        assertThat(solution.solution(1041)).isEqualTo(5);
     }
 
     @Test(expected = Test.None.class)
-    public void solution_max() {
+    public void testSolution_max() {
 
         solution.solution(2147483647);
     }
 
     @Test
-    public void solution328() {
+    public void testSolution328() {
         // 101001000
-        assertThat(solution.solution(328), equalTo(2));
+        assertThat(solution.solution(328)).isEqualTo(2);
     }
 
     @Test
-    public void solution1162() {
+    public void testSolution1162() {
         // 10010001010
-        assertThat(solution.solution(1162), equalTo(3));
+        assertThat(solution.solution(1162)).isEqualTo(3);
     }
 
     @Test
-    public void solution51712() {
+    public void testSolution51712() {
         // 110010100000000
-        assertThat(solution.solution(51712), equalTo(2));
+        assertThat(solution.solution(51712)).isEqualTo(2);
     }
 
     @Test
-    public void binaryGap11111() {
-        assertThat(solution.binaryGap("11111"), equalTo(0));
+    public void testBinaryGap11111() {
+        assertThat(solution.binaryGap("11111")).isEqualTo(0);
     }
 
     @Test
-    public void binaryGap0000() {
-        assertThat(solution.binaryGap("0000"), equalTo(0));
+    public void testBinaryGap0000() {
+        assertThat(solution.binaryGap("0000")).isEqualTo(0);
     }
 
     @Test
-    public void binaryGap101() {
-        assertThat(solution.binaryGap("101"), equalTo(1));
+    public void testBinaryGap101() {
+        assertThat(solution.binaryGap("101")).isEqualTo(1);
     }
 
     @Test
-    public void binaryGap1010010() {
-        assertThat(solution.binaryGap("1010010"), equalTo(2));
+    public void testBinaryGap1010010() {
+        assertThat(solution.binaryGap("1010010")).isEqualTo(2);
     }
 
     @Test
-    public void binaryGap01000010010() {
-        assertThat(solution.binaryGap("01000010010"), equalTo(4));
+    public void testBinaryGap01000010010() {
+        assertThat(solution.binaryGap("01000010010")).isEqualTo(4);
     }
 }

@@ -5,9 +5,7 @@ public class Solution {
 
         String binary = Integer.toBinaryString(n);
 
-        int result = binaryGap(binary);
-
-        return result;
+        return binaryGap(binary);
     }
 
     public int binaryGap(String binary) {
@@ -15,14 +13,15 @@ public class Solution {
             return 0;
         }
         boolean isCounting = false;
-        int count = 0, result = 0;
+        int count = 0;
+        int result = 0;
         for (int i = 1 ; i < binary.length() - 1; i++) {
             if (startCounting(binary, i)) {
                 isCounting = true;
                 count++;
             }
             if (endCounting(binary, i)) {
-                result = count > result ? count : result;
+                result = Math.max(count, result);
                 count = 0;
                 isCounting = false;
             }
@@ -31,15 +30,15 @@ public class Solution {
         return result;
     }
 
-    private boolean shouldIncrement(String binary, boolean isCounting, int i) {
+    private static boolean shouldIncrement(String binary, boolean isCounting, int i) {
         return isCounting && binary.charAt(i) == '0';
     }
 
-    private boolean endCounting(String binary, int i) {
+    private static boolean endCounting(String binary, int i) {
         return binary.charAt(i) == '0' && binary.charAt(i + 1) == '1';
     }
 
-    private boolean startCounting(String binary, int i) {
+    private static boolean startCounting(String binary, int i) {
         return binary.charAt(i) == '0' && binary.charAt(i - 1) == '1';
     }
 }
